@@ -35,6 +35,21 @@ namespace TradingServer
                 FatalError("로그인에 실패했습니다.");
 
             lbConnectionStatus.Text = "Connected";
+
+            try
+            {
+                int accCount = int.Parse(api.GetLoginInfo("ACCOUNT_CNT"));
+                var accounts = api.GetLoginInfo("ACCLIST").Split(';');
+
+                cbAccount.Items.AddRange(accounts);
+                if (accCount > 0)
+                    cbAccount.SelectedIndex = 0;
+            }
+            catch (Exception ex)
+            {
+                FatalError(ex.Message);
+                Application.Exit();
+            }
         }
     }
 }

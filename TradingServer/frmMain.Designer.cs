@@ -33,6 +33,8 @@ namespace TradingServer
             this.api = new AxKHOpenAPILib.AxKHOpenAPI();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.lbConnectionStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbAccounts = new System.Windows.Forms.Label();
+            this.cbAccount = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.api)).BeginInit();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -64,11 +66,31 @@ namespace TradingServer
             this.lbConnectionStatus.Size = new System.Drawing.Size(87, 17);
             this.lbConnectionStatus.Text = "No connection";
             // 
+            // lbAccounts
+            // 
+            this.lbAccounts.AutoSize = true;
+            this.lbAccounts.Location = new System.Drawing.Point(12, 9);
+            this.lbAccounts.Name = "lbAccounts";
+            this.lbAccounts.Size = new System.Drawing.Size(33, 12);
+            this.lbAccounts.TabIndex = 2;
+            this.lbAccounts.Text = "계좌:";
+            // 
+            // cbAccount
+            // 
+            this.cbAccount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbAccount.FormattingEnabled = true;
+            this.cbAccount.Location = new System.Drawing.Point(51, 6);
+            this.cbAccount.Name = "cbAccount";
+            this.cbAccount.Size = new System.Drawing.Size(156, 20);
+            this.cbAccount.TabIndex = 3;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 513);
+            this.Controls.Add(this.cbAccount);
+            this.Controls.Add(this.lbAccounts);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.api);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -89,6 +111,8 @@ namespace TradingServer
         private AxKHOpenAPILib.AxKHOpenAPI api;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel lbConnectionStatus;
+        private System.Windows.Forms.Label lbAccounts;
+        private System.Windows.Forms.ComboBox cbAccount;
     }
 }
 
